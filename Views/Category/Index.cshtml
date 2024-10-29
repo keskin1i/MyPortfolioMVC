@@ -1,0 +1,25 @@
+﻿@model List<MyPortfolioMVC.Models.TblCategories>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<form class="form-control">
+    <table class="table table-bordered">
+        <tr>
+            <th>KategoriId</th>
+            <th>Kategori Adı</th>
+        </tr>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.CategoryId</td>
+                <td>@i.Name</td>
+            </tr>
+        }
+    </table>
+</form>
+<br />
+<a href="/Category/CreateCategory" class="btn btn-primary"> Yeni Kategori Ekle</a>
+
