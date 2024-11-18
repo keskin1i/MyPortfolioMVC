@@ -1,0 +1,36 @@
+﻿@model List<MyPortfolioMVC.Models.TblExperiensies>
+<div class="column lg-6 tab-12">
+
+    <h2 class="text-pretitle" data-animate-el>
+        Deneyİmlerİm
+    </h2>
+
+    <div class="timeline" data-animate-el>
+
+        <div class="timeline__block">
+            <div class="timeline__bullet"></div>
+            @foreach (var item in Model)
+            {
+                <div class="timeline__header">
+                    <h4 class="timeline__title">
+                        @item.CompanyName
+                        <span class="timeline__title-separator"> - </span> <br />
+                        <small class="timeline__meta">@item.Title</small>
+                    </h4>
+                    <p class="timeline__timeframe">
+                        @(item.StartDate.HasValue ? item.StartDate.Value.ToString("yyyy-MM-dd") : "") - @(item.EndDate.HasValue ? item.EndDate.Value.ToString("yyyy-MM-dd") : "Devam Ediyor")
+                    </p>
+                </div>
+                <div class="timeline__desc">
+                    <p>@item.Description</p>
+                </div>
+            }
+        </div>
+
+
+
+
+
+    </div> <!-- end timeline -->
+
+</div> <!-- end column -->

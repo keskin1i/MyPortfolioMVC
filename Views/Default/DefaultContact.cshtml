@@ -1,0 +1,12 @@
+﻿@model List<MyPortfolioMVC.Models.TblContacts>
+
+<h3 class="text-pretitle">İletİşİm</h3>
+@foreach (var item in Model)
+{
+
+    <p class="contact-links">
+        <a href="mailto:sayhello@luther.com" class="mailtoui">@item.Email</a> <br>
+        <a href="tel:+90">@item.Phone</a>
+    </p>
+}
+

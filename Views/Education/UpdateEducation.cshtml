@@ -1,0 +1,60 @@
+﻿@model MyPortfolioMVC.Models.TblEducation
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<h2>Eğitim Güncelleme Sayfası</h2>
+
+<form asp-action="UpdateEducation" method="post">
+    @Html.HiddenFor(x => x.EducationId)
+
+    <label>Okul Adı</label>
+    @Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
+    <br />
+
+    <label>Bölüm Adı</label>
+    @Html.TextBoxFor(x => x.Department, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    @*<label>Başlama Tarihi</label>
+        <input type="date" name="StartDate" class="form-control" />
+        <br />
+
+        <label>Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
+        <input type="date" name="EndDate"  class="form-control" />
+        <br />*@
+
+    <label>Başlama Tarihi</label>
+    <input type="date" name="StartDate" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("yyyy-MM-dd") : "")" class="form-control" /> @*Hocanın Yaptığı*@
+    <br />
+
+    <label>Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
+    <input type="date" name="EndDate" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("yyyy-MM-dd") : "")" class="form-control" />
+    <br />
+
+
+    <label>Derece <span><strong>(Lisans, Önlisans, Yükseklisans vs...)</strong></span></label>
+    @*Hocanın Yaptığı*@
+    @*<select name="Degree" class="form-control">
+            <option>Seçim Yapınız</option>
+            <option value="ÖnLisans" @(Model.Degree=="ÖnLisans"?"selected":"")>Ön Lisans</option>
+            <option value="Lisans" @(Model.Degree=="ÖnLisans"?"selected":"")> Lisans</option>
+            <option value="YüksekLisans" @(Model.Degree=="ÖnLisans"?"selected":"")>Yüksek Lisans</option>
+        </select>*@
+    @Html.DropDownListFor(x => x.Degree, new SelectList(new[]
+    {
+        new { Value = "Önlisans", Text = "Önlisans" },
+        new { Value = "Lisans", Text = "Lisans" },
+        new { Value = "Yükseklisans", Text = "Yükseklisans" }
+    }, "Value", "Text", Model.Degree), "Seçiminizi Yapın", new { @class = "form-control" })
+    <br />
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
