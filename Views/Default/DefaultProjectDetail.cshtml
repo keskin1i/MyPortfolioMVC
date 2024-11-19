@@ -1,0 +1,37 @@
+﻿@model MyPortfolioMVC.Models.TblProjects
+
+<div id="@Model.ProjectId" hidden>
+    <div class="modal-popup">
+        <img src="images/portfolio/gallery/g-fuji.jpg" alt="">
+
+        <div class="modal-popup__desc">
+            <h5>@Model.Name</h5>
+            <p>@Model.Description</p>
+            <ul class="modal-popup__cat">
+                <li>@Model.TblCategories.Name</li>
+                <li>@Model.GithupUrl</li>
+            </ul>
+        </div>
+
+        <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
+    </div>
+
+
+</div>
+
+@*<div id="modal-01" hidden>
+    <div class="modal-popup">
+        <img src="images/portfolio/gallery/g-fuji.jpg" alt="">
+
+        <div class="modal-popup__desc">
+            <h5>Retro Camera</h5>
+            <p>Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.</p>
+            <ul class="modal-popup__cat">
+                <li>Branding</li>
+                <li>Product Design</li>
+            </ul>
+        </div>
+
+        <a href="https://www.behance.net/" class="modal-popup__details">Project link</a>
+    </div>
+</div>*@

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MyPortfolioMVC.Controllers
 {
+   
     public class CategoryController : Controller
     {
         MyPortfolio _db = new MyPortfolio();

@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace MyPortfolioMVC.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         MyPortfolio _db = new MyPortfolio();
 
+       
         public ActionResult Index()
         {
             return View();
@@ -55,6 +58,20 @@ namespace MyPortfolioMVC.Controllers
             var deger = _db.TblSocialMedias.ToList();
             return PartialView(deger);
         }
+        public PartialViewResult DefaultProject() 
+        {
+            var deger = _db.TblProjects.ToList();
+            return PartialView(deger);
+        }
+        public PartialViewResult DefaultProjectDetail(int id)
+        {
+
+            var project = _db.TblProjects.Find(id);
+            return PartialView(project);
+
+        }
+
+        //mesaj gönderme işlemleri yapılacak
 
     }
 }

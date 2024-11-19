@@ -11,7 +11,9 @@ namespace MyPortfolioMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class TblAdmins
     {
         public int AdminId { get; set; }
@@ -20,5 +22,8 @@ namespace MyPortfolioMVC.Models
         public string Name { get; set; }
         public string SurName { get; set; }
         public string ImageUrl { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

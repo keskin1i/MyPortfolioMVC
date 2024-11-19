@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -462,9 +463,13 @@
     <Content Include="Views\Default\DefaultTestimonial.cshtml" />
     <Content Include="Views\Default\DefaultContact.cshtml" />
     <Content Include="Views\Default\DefaultSocialMedia.cshtml" />
+    <Content Include="Views\Default\DefaultProject.cshtml" />
+    <Content Include="Views\Default\DefaultProjectDetail.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

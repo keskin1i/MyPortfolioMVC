@@ -8,9 +8,11 @@ using System.Web.Security;
 
 namespace MyPortfolioMVC.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         MyPortfolio _db = new MyPortfolio();
+       
         [HttpGet]
         public ActionResult Index()
         {
@@ -51,8 +53,8 @@ namespace MyPortfolioMVC.Controllers
             // Çerezlerde değerlerini tutuyoruz
             FormsAuthentication.SetAuthCookie(value.Email, false);
 
-            // Oturum süresi boyunca isim soyisimi alıyoruz
-            Session["nameSurname"] = value.Name + " " + value.SurName;
+           
+            Session["email"] = value.Email;
 
             return RedirectToAction("Index", "Category");
         }
